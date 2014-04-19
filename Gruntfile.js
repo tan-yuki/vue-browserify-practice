@@ -60,7 +60,10 @@ module.exports = function (grunt) {
                 ]
             },
             browserify: {
-                files: ['app/scripts/**/*.js'],
+                files: [
+                    'app/scripts/**/*.js',
+                    'test/spec/**/*.js'
+                ],
                 tasks: ['browserify']
             }
         },
@@ -311,7 +314,11 @@ module.exports = function (grunt) {
         browserify: {
             app: {
                 src: ['app/scripts/**/*.js'],
-                dest: 'app/browserify/app.js',
+                dest: 'app/browserify/app.js'
+            },
+            test: {
+                src: ['test/spec/**/*.js'],
+                dest: 'test/browserify_spec/app_spec.js'
             }
         }
     });
